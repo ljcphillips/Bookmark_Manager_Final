@@ -5,6 +5,8 @@ class BookmarkManager < Sinatra::Base
   configure do
     enable :sessions
     set :session_secret, 'key'
+    # session = Capybara::Session.new(:selenium, BookmarkManager)
+
   end
   # set :root, File.dirname(__FILE__)
   run! if app_file == $0
