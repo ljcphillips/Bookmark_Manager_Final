@@ -24,6 +24,42 @@ require 'rspec'
 Capybara.app = BookmarkManager
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+require './lib/bookmark_test'
+  config.before(:each) do
+    clearout
+    # Whatever you put here will happen before each spec runs
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
