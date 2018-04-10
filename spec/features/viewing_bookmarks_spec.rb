@@ -1,7 +1,6 @@
 require "capybara/rspec"
 require "./app/app"
 
-# describe Bookmark do
 
   feature "Show homepage" do
     scenario "user goes to / path to view homepage" do
@@ -11,4 +10,3 @@ require "./app/app"
       expect(page).to have_content "google.com"
     end
   end
-# end
