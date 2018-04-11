@@ -2,7 +2,7 @@
 
 <form action='/bookmarks/delete' method="post">
   <% @bookmarks.each do |bookmark| %>
-    <input type="checkbox" id="<%=bookmark%>" name="delete" value="<%=bookmark%>">
+    <input type="checkbox" id="<%=bookmark%>" name="delete[]" value="<%=bookmark%>">
     <a href="<%=bookmark%>" target="_blank"><%=bookmark%></a>
     <hr>
   <% end %>
