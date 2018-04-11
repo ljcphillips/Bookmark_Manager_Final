@@ -1,3 +1,10 @@
 <h1>Bookmark Manager</h1>
 
-<%= @bookmarks %>
+<% @bookmarks.each do |bookmark| %>
+  <p><%=bookmark%></p>
+<% end %>
+
+<form action='/bookmarks/new' method="post">
+  <input type=“text” name="url" />
+  <input type="submit" value="Add bookmark" />
+</form>
