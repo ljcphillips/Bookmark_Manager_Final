@@ -10,4 +10,5 @@ group :development, :test do
   gem "selenium-webdriver"
   gem "pg"
   gem "rake"
+  gem 'pry'
 end
