@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 ruby '2.5.0'
 
+
+
 group :development, :test do
   gem "rspec"
   gem "capybara"
@@ -11,4 +13,5 @@ group :development, :test do
   gem "pg"
   gem "rake"
   gem 'pry'
+  gem 'sinatra-flash'
 end

@@ -31,20 +31,15 @@ class Bookmark
     end
 
     query = "DELETE FROM bookmark WHERE url = '#{bookmark[0]}'"
-    p bookmark.length
 
     if bookmark.length > 1
         bookmark.each_with_index do |one_bookmark, index|
           if index > 0
             query += " OR url = '#{one_bookmark}'"
           end
-          p index
         end
         query + ";"
         connection.exec(query)
-        p query
-
-      # connection.exec("DELETE FROM bookmark WHERE url = '#{bookmark[0]}' OR url = '#{bookmark[1]}';")
     end
   end
 end

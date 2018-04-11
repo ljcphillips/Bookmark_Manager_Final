@@ -5,6 +5,12 @@ feature "Adding a bookmark " do
     click_button "Add bookmark"
     expect(page).to have_content "http://google.com"
   end
+
+  scenario "User enters no URL to form and hits submit" do
+    visit '/bookmarks'
+    click_button "Add bookmark"
+    expect(page).to have_content "No URL"
+  end
 end
 
 feature "Deleting bookmarks" do

@@ -1,11 +1,13 @@
 require 'sinatra/base'
 require './lib/bookmark'
 require 'pry'
+require 'sinatra/flash'
 
 class BookmarkManager < Sinatra::Base
   configure do
     enable :sessions
     set :session_secret, 'key'
+    register Sinatra::Flash
   end
 
   run! if app_file == $0
@@ -16,13 +18,18 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/bookmarks/new' do
-    Bookmark.create(params[:url])
+
+    if params[:url] == ""
+      flash[:error] = "No URL"
+    else
+      Bookmark.create(params[:url])
+    end
+
     redirect '/bookmarks'
   end
 
   post '/bookmarks/delete' do
     Bookmark.delete(params[:delete])
-    p params
     redirect '/bookmarks'
   end
 
