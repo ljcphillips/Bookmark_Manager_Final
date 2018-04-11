@@ -13,8 +13,10 @@ feature "Deleting bookmarks" do
     visit ("/bookmarks")
     check('http://google.com')
     check('http://makersacademy.com')
+    check('http://destroyallsoftware.com')
     click_button "Delete"
     expect(page).to_not have_content "http://makersacademy.com"
     expect(page).to_not have_content "http://google.com"
+    expect(page).to_not have_content "http://destroyallsoftware.com"
   end
 end
