@@ -11,6 +11,13 @@ feature "Adding a bookmark " do
     click_button "Add bookmark"
     expect(page).to have_content "No URL"
   end
+
+  scenario 'User enters an invalid URL and hits submit' do
+    visit ("/bookmarks")
+    fill_in :url, with: "wazzle.com"
+    click_button "Add bookmark"
+    expect(page).to have_content "Invalid URL"
+  end
 end
 
 feature "Deleting bookmarks" do

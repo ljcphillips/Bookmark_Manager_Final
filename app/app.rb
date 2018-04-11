@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/bookmark'
 require 'pry'
 require 'sinatra/flash'
+require 'uri'
 
 class BookmarkManager < Sinatra::Base
   configure do
@@ -21,8 +22,10 @@ class BookmarkManager < Sinatra::Base
 
     if params[:url] == ""
       flash[:error] = "No URL"
-    else
+    elsif params[:url] =~ URI::regexp
       Bookmark.create(params[:url])
+    else
+      flash[:error] = "Invalid URL"
     end
 
     redirect '/bookmarks'
