@@ -6,6 +6,7 @@ require './app/app.rb'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require './spec/web_helpers'
 
 # tell Capybara about our app class
 Capybara.app = BookmarkManager
@@ -16,36 +17,6 @@ require './lib/setup_test_database'
     clearout
     # Whatever you put here will happen before each spec runs
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

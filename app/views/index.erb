@@ -1,8 +1,13 @@
 <h1>Bookmark Manager</h1>
 
-<% @bookmarks.each do |bookmark| %>
-  <a href="<%=bookmark%>" target="_blank"><%=bookmark%></a><hr>
-<% end %>
+<form action='/bookmarks/delete' method="post">
+  <% @bookmarks.each do |bookmark| %>
+    <input type="checkbox" id="<%=bookmark%>" name="delete" value="<%=bookmark%>">
+    <a href="<%=bookmark%>" target="_blank"><%=bookmark%></a>
+    <hr>
+  <% end %>
+  <input type="submit" value="Delete" />
+</form>
 
 <form action='/bookmarks/new' method="post">
   <input type=“text” name="url" />
