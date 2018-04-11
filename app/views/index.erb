@@ -1,7 +1,7 @@
 <h1>Bookmark Manager</h1>
 
 <% @bookmarks.each do |bookmark| %>
-  <p><%=bookmark%></p>
+  <a href="<%=bookmark%>" target="_blank"><%=bookmark%></a><hr>
 <% end %>
 
 <form action='/bookmarks/new' method="post">
