@@ -9,7 +9,7 @@ class Bookmark
       connection = PG.connect(dbname: 'bookmark_manager')
     end
 
-    result = connection.exec("SELECT * FROM bookmarks")
+    result = connection.exec("SELECT * FROM bookmark")
     result.map { |link| link['url'] }
   end
 end
