@@ -23,7 +23,7 @@ class BookmarkManager < Sinatra::Base
     if params[:url] == ""
       flash[:error] = "No URL"
     elsif params[:url] =~ URI::regexp
-      Bookmark.create(params[:url])
+      Bookmark.create(Bookmark.new(params[:url], params[:title]))
     else
       flash[:error] = "Invalid URL"
     end
