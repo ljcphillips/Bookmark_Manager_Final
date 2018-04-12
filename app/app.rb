@@ -31,6 +31,19 @@ class BookmarkManager < Sinatra::Base
     redirect '/bookmarks'
   end
 
+  post '/bookmarks/update' do
+
+    if params[:url] == ""
+      flash[:error] = "No URL"
+    elsif params[:url] =~ URI::regexp
+      Bookmark.create(Bookmark.new(params[:url], params[:title]))
+    else
+      flash[:error] = "Invalid URL"
+    end
+
+    redirect '/bookmarks'
+  end
+
   post '/bookmarks/delete' do
     Bookmark.delete(params[:delete])
     redirect '/bookmarks'

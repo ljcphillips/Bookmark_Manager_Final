@@ -35,4 +35,15 @@ feature "Deleting bookmarks" do
     expect(page).to_not have_content "Google"
     expect(page).to_not have_content "DAS"
   end
+
+  feature "Update a bookmark" do
+    scenario "user selects a single bookmark, updates and submits." do
+      fill_data
+      visit ("/bookmarks")
+      check('http://google.com')
+      fill_in :title, with: "Notgoogle"
+      click_button "Update"
+      expect(page).to have_content "Notgoogle"
+    end
+  end
 end
