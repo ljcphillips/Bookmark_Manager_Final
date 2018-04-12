@@ -39,13 +39,12 @@ attr_reader :url, :title
     else
       connection = PG.connect(dbname: 'bookmark_manager')
     end
-    binding.pry
-    query = "DELETE FROM bookmark WHERE url = '#{bookmark[0]}'"
+    query = "DELETE FROM bookmark WHERE title = '#{bookmark[0]}'"
 
     if bookmark.length > 1
         bookmark.each_with_index do |one_bookmark, index|
           if index > 0
-            query += " OR url = '#{one_bookmark}'"
+            query += " OR title = '#{one_bookmark}'"
           end
         end
         query + ";"
