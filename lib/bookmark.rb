@@ -51,4 +51,26 @@ attr_reader :url, :title
     end
     connection.exec(query)
   end
+
+  def self.search(params)
+    if ENV['RACK_ENV'] == 'test'
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+    else
+      connection = PG.connect(dbname: 'bookmark_manager')
+    end
+    result = connection.exec("SELECT * FROM bookmark WHERE title = '#{params}'")
+    p result
+    p result.map { |link| link }
+  end
+
+  def self.update(params,id)
+    if ENV['RACK_ENV'] == 'test'
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+    else
+      connection = PG.connect(dbname: 'bookmark_manager')
+    end
+    # connection.exec("UPDATE bookmark SET url = #{params[:url]} WHERE id = '#{@id}'")
+    connection.exec("UPDATE bookmark SET title = '#{params[:title]}' WHERE id = id")
+  end
+
 end

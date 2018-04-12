@@ -1,11 +1,19 @@
 <h1>Bookmark Manager</h1>
 
 <form action='/bookmarks/delete' method="post">
-  <% @bookmarks.each do |bookmark| %>
-    <input type="checkbox" id="<%=bookmark['url']%>" name="delete[]" value="<%=bookmark['title']%>">
-    <a href="<%=bookmark['url']%>" target="_blank"><%=bookmark['title']%></a>
+  
+    <input type="checkbox" id="http://makersacademy.com" name="delete[]" value="">
+    <a href="http://makersacademy.com" target="_blank"></a>
     <hr>
-  <% end %>
+  
+    <input type="checkbox" id="http://destroyallsoftware.com" name="delete[]" value="">
+    <a href="http://destroyallsoftware.com" target="_blank"></a>
+    <hr>
+  
+    <input type="checkbox" id="http://google.com" name="delete[]" value="">
+    <a href="http://google.com" target="_blank"></a>
+    <hr>
+  
   <input type="submit" value="Delete" />
 </form>
 
@@ -27,4 +35,4 @@
 </form> -->
 
 
-<div><%=flash[:error]%></div>
+<div></div>
