@@ -38,10 +38,12 @@ class BookmarkManager < Sinatra::Base
 
   post '/bookmarks/search' do
     @bookmark = Bookmark.search(params[:search])
-    @id = @bookmark[0]['id']
     erb :update
-    redirect '/bookmarks/search'  
-    Bookmark.update(params,@id)
+  end
+
+  post '/bookmarks/update' do
+    p params
+    p Bookmark.update(params)
     redirect '/bookmarks'
   end
 

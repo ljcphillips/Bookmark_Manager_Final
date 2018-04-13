@@ -1,8 +1,6 @@
 require 'pg'
 require 'pry'
 
-
-
 class Bookmark
 
 attr_reader :url, :title
@@ -20,7 +18,6 @@ attr_reader :url, :title
     end
 
     result = connection.exec("SELECT * FROM bookmark")
-    result.map { |link| link }
   end
 
   def self.create(bookmark)
@@ -58,19 +55,17 @@ attr_reader :url, :title
     else
       connection = PG.connect(dbname: 'bookmark_manager')
     end
-    result = connection.exec("SELECT * FROM bookmark WHERE title = '#{params}'")
-    p result
-    p result.map { |link| link }
+    p connection.exec("SELECT * FROM bookmark WHERE title = '#{params}'")
   end
 
-  def self.update(params,id)
+  def self.update(params)
     if ENV['RACK_ENV'] == 'test'
       connection = PG.connect(dbname: 'bookmark_manager_test')
     else
       connection = PG.connect(dbname: 'bookmark_manager')
     end
     # connection.exec("UPDATE bookmark SET url = #{params[:url]} WHERE id = '#{@id}'")
-    connection.exec("UPDATE bookmark SET title = '#{params[:title]}' WHERE id = id")
+    p connection.exec("UPDATE bookmark SET title = '#{params[:title]}' WHERE id = '#{params[:id]}'")
   end
 
 end

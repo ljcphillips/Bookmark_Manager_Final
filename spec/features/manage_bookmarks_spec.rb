@@ -43,7 +43,7 @@ end
       visit ("/bookmarks")
       fill_in :search, with: "Google"
       click_button "Submit"
-      save_and_open_page
+      # save_and_open_page
       fill_in :title, with: "Notgoogle"
 
       click_button "Update"
