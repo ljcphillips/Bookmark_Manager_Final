@@ -126,3 +126,6 @@ We first started with finishing Lorraine's update method and webapp implementati
 Lorraine found a link in regards to linking two tables together in a database:
 
 https://stackoverflow.com/questions/28558920/postgresql-foreign-key-syntax
+
+We split up for a while to read up on what a one to many relationship looks like in a database, and what the differences with this and other relationships.
+We then created the comments tables on our own machines.
