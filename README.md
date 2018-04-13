@@ -111,6 +111,14 @@ After that, we then looked into implementing the links to these titles. Again, a
 
 ### Day 4: Patryk and Jihin
 
-#### CRUD
+#### CRUD (Creating, reading, updating, deleting)
 
 I tested and implemented the `self.delete`. I realised that in order to implement the delete method so that it can take either a `url` or a `title`, the method would have to take 1 argument and not 2. I took on Patryk's implementation of the `params`, and then using this `[:url]` and `[:title]` in order to specify where in the params hash I am looking at. I then had to change all the testing and other methods to meet this new way of entering arguments.
+
+### Day 5: Lorraine and Jihin
+
+#### CRUD
+
+We first started with finishing Lorraine's update method and webapp implementation. We discovered some syntaxing issues and sorted the controller as well!
+
+####
