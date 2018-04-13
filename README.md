@@ -121,4 +121,8 @@ I tested and implemented the `self.delete`. I realised that in order to implemen
 
 We first started with finishing Lorraine's update method and webapp implementation. We discovered some syntaxing issues and sorted the controller as well!
 
-####
+#### One to many
+
+Lorraine found a link in regards to linking two tables together in a database:
+
+https://stackoverflow.com/questions/28558920/postgresql-foreign-key-syntax
